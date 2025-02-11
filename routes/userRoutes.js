@@ -1,5 +1,5 @@
 import express from "express";
-import getallusers from "../Controllers/Usercontrollers.js";
+import getallusers, { userupdation } from "../Controllers/Usercontrollers.js";
 import { createuser } from "../Controllers/Usercontrollers.js";
 const userRoutes=express.Router()
 
@@ -13,6 +13,9 @@ userRoutes.get("/allusers",getallusers)    // http://localhost:5000/user/alluser
 //Create/add users
 userRoutes.post("/add",createuser);       // http://localhost:5000/user/add
 
+
+//Updation
+userRoutes.put("/updateuser",userupdation);
 
 
 

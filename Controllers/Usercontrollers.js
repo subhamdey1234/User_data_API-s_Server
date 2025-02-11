@@ -41,6 +41,27 @@ catch (error) {
 }
 
 
+export const userupdation=async(req,res)=>{
+    try {
+        
+const {email}=req.query;
+const isuser=model.findOne({email});
+if (isuser) {
+    await model.updateOne({email},{$set:{...req.body}});
+    res.status(201).send("Updated Successfully");
+    console.log("User Updated Successfully");
+    
+}
+else{
+    res.send(400).send("Something Went Wrong");
+}
+
+    } catch (error) {
+        console.log(error);
+        
+    }
+}
+
 
 
 export default getallusers;

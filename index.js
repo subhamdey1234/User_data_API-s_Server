@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 import mongodbconnection from "./config/db.js";
 import model from "./model/Schema.js";
 import userRoutes from "./routes/userRoutes.js";
-
+import ProductRoutes from "./routes/ProductRoutes.js";
 const app=express();
 
 
@@ -21,7 +21,7 @@ res.send("Hello");
 
 //routes
 app.use("/user",userRoutes);
-
+app.use("/product",ProductRoutes);
 
 //Connect the DB------
 mongodbconnection();
